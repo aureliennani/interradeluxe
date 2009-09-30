@@ -39,7 +39,12 @@
     
     ## Step 2 - Open DB Connection ##
     #
-    
+    try{
+        $db = new PDO($GLOBALS['_CONFIG']['dbtype'].':host='.$GLOBALS['_CONFIG']['dbhost'].';dbname='.$GLOBALS['_CONFIG']['dbname'],$GLOBALS['_CONFIG']['dbuser'],$GLOBALS['_CONFIG']['dbpass']);
+    }catch (exception $e){
+        echo $e->getMessage();
+        exit;
+    }
     #
     ##
     
@@ -50,7 +55,7 @@
     require_once $GLOBALS['_CONFIG']['root'].'lib/smarty/Smarty.class.php';
     
     //cast Template Parser
-    $smarty = new mySmarty();    
+    $smarty = new Smarty();    
     #
     ##
     
@@ -60,6 +65,13 @@
     if($GLOBALS['_CONFIG']['locale']){
         setlocale(LC_TIME,$GLOBALS['_CONFIG']['locale']);
     }
+    #
+    ##
+    
+    
+    ## Step 5 - INIT Session ##
+    #
+    
     #
     ##
 ?>
