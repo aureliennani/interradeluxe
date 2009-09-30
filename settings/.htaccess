@@ -1,0 +1,9 @@
+<files *.ini>
+  Order Deny,Allow
+  Deny From All
+</files>
+
+<files *.sql>         
+  Order Deny,Allow
+  Deny From All
+</files>
