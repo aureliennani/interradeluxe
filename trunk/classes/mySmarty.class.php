@@ -39,12 +39,13 @@
             $this->template_dir     = array();            
             if($_GET['admin']){
                 $this->template_dir[]   = $GLOBALS['_CONFIG']['root'].'templates/_admin';
+                $this->compile_dir      = $GLOBALS['_CONFIG']['root'].'cache/templates_c/_admin';
             }else{
                 $this->template_dir[]   = $GLOBALS['_CONFIG']['root'].'templates/'.$GLOBALS['_CONFIG']['template'].'/';
                 $this->template_dir[]   = $GLOBALS['_CONFIG']['root'].'templates/_system';
+                $this->compile_dir      = $GLOBALS['_CONFIG']['root'].'cache/templates_c';
             }
             
-            $this->compile_dir      = $GLOBALS['_CONFIG']['root'].'cache/templates_c';
             $this->config_dir       = array();
             $this->config_dir[]     = $GLOBALS['_CONFIG']['root'].'templates/_lang';
             
