@@ -13,12 +13,12 @@
      *******************************************************/
     
     /***
-        @purpose    
+        @purpose    The Splash page of the Blog
      ***/
     class controllerRoot extends controller{
         
         public function process(){
-            echo 'root controller';
+            
         }
         
     }

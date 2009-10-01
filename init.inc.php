@@ -53,9 +53,10 @@
     #
     //import Template Parsing Libraries
     require_once $GLOBALS['_CONFIG']['root'].'lib/smarty/Smarty.class.php';
+    require_once $GLOBALS['_CONFIG']['root'].'classes/mySmarty.class.php';
     
     //cast Template Parser
-    $smarty = new Smarty();    
+    $smarty = new mySmarty();    
     #
     ##
     

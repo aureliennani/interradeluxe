@@ -13,7 +13,7 @@
      *******************************************************/
     
     /***
-        @purpose    
+        @purpose    A 404 Page of the Blog
      ***/
     class controller404 extends controller{
         
