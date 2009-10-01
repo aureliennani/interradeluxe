@@ -91,6 +91,7 @@
             $data = array();
             $data['root']    = $GLOBALS['_CONFIG']['url'];
             $data['admin']   = $GLOBALS['_CONFIG']['url'].'templates/_admin/';
+            $data['title']   = $GLOBALS['_CONFIG']['title'];
             $data['version'] = '0.001';
             
             $this->assign('DATA',$data);            

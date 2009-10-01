@@ -6,19 +6,46 @@
     <link rel="stylesheet" type="text/css" media="screen,projection" href="{$DATA.admin}main.css" />    
     
     {if $template=="login.html"}    
-    <link rel="stylesheet" type="text/css" media="screen,projection" href="{$DATA.admin}login.css" />  
+        <link rel="stylesheet" type="text/css" media="screen,projection" href="{$DATA.admin}login.css" />  
+    {else}
+        <!-- toolbar -->
+        <script src="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/dhtmlxcommon.js"></script>
+        <script src="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/dhtmlxtoolbar.js"></script>
+        <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/skins/dhtmlxtoolbar_dhx_skyblue.css" />
+        <!-- /toolbar -->
+        
+        <!-- layout -->
+        <script src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxcommon.js"></script>
+        <script src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxcontainer.js"></script>
+        <script src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxlayout.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/skins/dhtmlxlayout.css" />
+        <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/skins/dhtmlxlayout_dhx_skyblue.css" />
+        <!-- /layout -->
+        
+        <!-- trees -->
+        <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxtree.css" />
+        <script src="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxcommon.js"></script>
+        <script src="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxtree.js"></script>   
+        <!-- /trees -->
     {/if}
 </head>
 
 <body>
     <div id="content">
-        {if $template}
+        {if $template == 'login.html'}
+            {include file=$template}
+        {else}
+            <div id="header">
+                <div id="logo">{$DATA.title}</div>
+                <div id="user">
+                    <a href="#" id="currentuser">a.kulikov@gmail.com</a> | <a href="{$DATA.root}logout/">Sign Out</a>
+                </div>
+            </div>
+            
+                        
             {include file=$template}
         {/if}
-    </div>
-    
-    <div id="footer">
-        an <a href="http://essentialmind.com/">essential</a> project
     </div>
 </body>
 </html>
