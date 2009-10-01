@@ -14,13 +14,25 @@
     <table width="100%">
         <thead>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td width="30">&nbsp;</td>
                 <td>Name</td>
-                <td>Keywords</td>
-                <td>Author</td>
+                <td width="250">Keywords</td>
+                <td width="150">Date</td>
+                <td width="150">DateAuthor</td>
             </tr>
         </thead>
+        <tbody>
+            <tr>
+                <td colspan="5">RECENT STUFF</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td><a href="#">Hacking your iPhone</a></td>
+                <td><a href="#">iPhone</a>, <a href="#">Apple</a>, <a href="#">PHP</a></td>
+                <td>Aug 4, '09</td>
+                <td>Alexey Kulikov</td>
+            </tr>
+        </tbody>
     </table>
 </div>
 
@@ -30,7 +42,8 @@
     dhxLayout.cells("a").setWidth(250);
     dhxLayout.cells("a").attachObject("lmenu");
     dhxLayout.cells("b").hideHeader();
-    dhxLayout.cells("b").progressOn();
+    //dhxLayout.cells("b").progressOn();
+    dhxLayout.cells("b").attachObject("mainlist");
 </script>
 
 

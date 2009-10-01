@@ -33,3 +33,34 @@ INSERT INTO credentials SET
     
     created = NOW();
     
+
+
+CREATE TABLE articles(
+    aid             INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    published       ENUM('0','1') NOT NULL DEFAULT '0',
+    deleted         ENUM('0','1') NOT NULL DEFAULT '0',
+    
+    title           VARCHAR(255),
+    content         BLOB,
+    
+    url             VARCHAR(255) NOT NULL,
+    
+    created         DATETIME,
+    modified        DATETIME,
+    publish_on      DATETIME,
+    
+    author          INT UNSIGNED NOT NULL,
+    
+    cache_keywords  TEXT,
+    cache_comments  INT UNSIGNED DEFAULT 0,
+    cache_files     INT UNSIGNED DEFAULT 0,
+    cache_images    INT UNSIGNED DEFAULT 0,
+    
+    PRIMARY KEY(aid),
+    KEY(published),
+    KEY(deleted),
+    KEY(url),
+    KEY(publish_on),
+    KEY(author)
+    
+) DEFAULT CHARSET=utf8;
