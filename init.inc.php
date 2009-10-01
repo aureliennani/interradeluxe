@@ -12,6 +12,42 @@
     
      *******************************************************/
 
+    ## Autoloader ##
+    #
+    /**
+     * __autoload() -- automatic class loader
+     * 
+     * @param string $className
+     * @return void
+     **/
+    function __autoload($className){
+        /*
+            The order of priority lies as follows:
+                /classes/
+            
+            Each of the above locations is checked for the existense of
+            the desired class. In case none is found the application will
+            be halted.
+            
+            Please note, that external libraries cannot be overridden, thus
+            their location in the 'lib' directory
+        */
+        //first check for an override in the solution's classes dir
+        if(file_exists($GLOBALS['_CONFIG']['root'].'classes/core/'.$className.'.class.php')){
+            require_once $GLOBALS['_CONFIG']['root'].'classes/core/'.$className.'.class.php';
+            return;
+        }    
+        
+        if(file_exists($GLOBALS['_CONFIG']['root'].'classes/'.$className.'.class.php')){
+            require_once $GLOBALS['_CONFIG']['root'].'classes/'.$className.'.class.php';
+            return;
+        }        
+        
+        echo "Fatal Error: class \"" . $className . "\" not found!";
+        exit;
+    }
+    #
+    ##
 
     ## Step 1 - Init Config ##
     #
@@ -39,8 +75,13 @@
     
     ## Step 2 - Open DB Connection ##
     #
+    # @2do -- if caching is on, I should open a db connection on demand only
+    #
     try{
-        $db = new PDO($GLOBALS['_CONFIG']['dbtype'].':host='.$GLOBALS['_CONFIG']['dbhost'].';dbname='.$GLOBALS['_CONFIG']['dbname'],$GLOBALS['_CONFIG']['dbuser'],$GLOBALS['_CONFIG']['dbpass']);
+        $db = new PDO($GLOBALS['_CONFIG']['dbtype'].':host='.$GLOBALS['_CONFIG']['dbhost'].';dbname='.$GLOBALS['_CONFIG']['dbname'],$GLOBALS['_CONFIG']['dbuser'],$GLOBALS['_CONFIG']['dbpass'],array());
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $db->setAttribute(PDO::ATTR_CASE, PDO::CASE_LOWER);
+        $db->exec("SET NAMES 'utf8'");
     }catch (exception $e){
         echo $e->getMessage();
         exit;
@@ -56,7 +97,7 @@
     require_once $GLOBALS['_CONFIG']['root'].'classes/mySmarty.class.php';
     
     //cast Template Parser
-    $smarty = new mySmarty();    
+    $smarty = new mySmarty(); //mySmarty configures the Smarty template endinge with InTerra's settings
     #
     ##
     
@@ -72,7 +113,7 @@
     
     ## Step 5 - INIT Session ##
     #
-    
+    session_start();    // @2do move to db based sessions
     #
     ##
 ?>

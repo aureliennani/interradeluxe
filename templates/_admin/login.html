@@ -1,0 +1,40 @@
+<div id="loginmask">
+    <form method="post" action="{$DATA.root}admin/">
+        <fieldset>
+            <legend>Credentials</legend>
+            {if $nogo}
+            <div id="nogo">
+                We tried! But you are a stranger! Please leave!
+            </div>
+            {/if}
+            <table width="100%">
+                <tr>
+                    <td align="right" style="text-align: right">E-Mail:</td>
+                    <td width="70%">
+                        <input type="text" style="width: 90%" name="mail" value="{$smarty.post.mail|default:$smarty.cookies.mail|default:$smarty.get.mail}" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="right">Password:</td>
+                    <td>
+                        <input type="password" style="width: 90%" name="pass" value="{$smarty.get.pass}" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td align="center" colspan="2" style="color: #666;">
+                        <small>Do <u>NOT</u> Remember me for autologin <input type="checkbox" name="remember" value="1" {if !$smarty.cookies.remember or $smarty.cookies.remember == 'true'}checked{/if} /></small>
+                    </td>
+                </tr>
+            </table>
+            
+            <div align="center" style="margin: 5px;">
+                <input type="submit" name="login" value="Yarr" />
+            </div>
+        </fieldset>
+    </form>
+    <div id="essential">
+        an <a href="http://essentialmind.com" target="_blank" title="essentialmind web developmentin vienna, austria">essential</a> project
+    </div>
+</div>

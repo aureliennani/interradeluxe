@@ -27,7 +27,7 @@
         if(!$_GET['admin']){
             $_GET['controller'] = 'root';
         }else{
-            $_GET['controller'] = 'adminBase';
+            $_GET['controller'] = 'adminRoot';
             $smarty->caching    = false;        //no cache for admin side
         }
     }       
@@ -51,7 +51,7 @@
         //call controller
         $cName = 'controller'.ucfirst($_GET['controller']);
         include_once($GLOBALS['_CONFIG']['root'].'classes/core/'.$cName.'.class.php');
-        $controller = new $cName($db, $smarty, $user);
+        $controller = new $cName($db, $smarty);
         #
         #### /Create #######
             

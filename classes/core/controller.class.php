@@ -21,17 +21,29 @@
         protected $smarty;
         protected $user;
         
-        public function __construct($db,$smarty,$user){
+        public function __construct($db,$smarty){
             $this->db     = $db;
-            $this->smarty = $smarty;
-            $this->user   = $user;
+            $this->smarty = $smarty;            
         }
+        
         
         public abstract function process();        
         
+        
+        /*
+            @purpose    Central controller processor
+         */
         public function display($template='index.html'){
-            $this->process();
+            $this->process();            
             $this->smarty->display($template);
-        }   
+        }
+        
+        
+        /*
+            @purpose    Assign default controller action
+         */
+        protected function template($template){
+            $this->smarty->assign('template',$template);
+        }
     }
 ?>

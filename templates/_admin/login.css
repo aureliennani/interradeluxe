@@ -1,0 +1,52 @@
+#footer{
+    display: none;
+}
+
+#loginmask{
+    width: 400px;
+    margin: 200px auto;
+}
+
+#loginmask fieldset{
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+    border-right: 1px solid #ccc;
+}
+
+#essential{
+    text-align: center;
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+#essential a{
+    color: #aaa;
+}
+
+#nogo{
+    background: #fee;
+    text-align: center;
+    color: #f00;
+    font-size: 11px;
+    padding: 5px;
+    margin: 5px 5px 10px;
+}
+
+fieldset{
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+legend{
+    padding: 0 5px;
+    color: rgb(102, 136, 85);
+    padding-bottom: 4px;
+}
+
+label{
+    font-weight: bold;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 10px;
+}
