@@ -29,8 +29,9 @@
         
         public abstract function process();        
         
-        public function display(){
+        public function display($template='index.html'){
             $this->process();
+            $this->smarty->display($template);
         }   
     }
 ?>
