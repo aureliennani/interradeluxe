@@ -3,18 +3,25 @@
 <script>
     var toolbar = new dhtmlXToolbarObject("toolbarObj"); 
     toolbar.setIconsPath("{$DATA.root}lib/dhtmlx/dhtmlxToolbar/samples/common/imgs/");
-    toolbar.loadXML("{$DATA.root}/settings/admin/toolbar.xml?etc=" + new Date().getTime());
+    toolbar.loadXML("{$DATA.root}settings/admin/toolbar.xml");
 </script>
 
 <div id="parentId" style="position:absolute; width:100%; height:100%;"></div>
 
 
-<div id="lmenu" style="width: 100%; height: 100%; overflow: auto; display: none;">
-    All Items<br />
-    -- Owned By Me<br />
-    -- Opened Recently<br />
-    -- Starred<br />
-    -- Unpublished
+<div id="lmenu"></div>
+<div id="mainlist">
+    <table width="100%">
+        <thead>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Name</td>
+                <td>Keywords</td>
+                <td>Author</td>
+            </tr>
+        </thead>
+    </table>
 </div>
 
 <script>     
@@ -24,4 +31,14 @@
     dhxLayout.cells("a").attachObject("lmenu");
     dhxLayout.cells("b").hideHeader();
     dhxLayout.cells("b").progressOn();
+</script>
+
+
+<script>
+    tree = new dhtmlXTreeObject({
+        skin: "dhx_skyblue",
+        parent: "lmenu",
+        image_path: "{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/imgs/csh_bluebooks/",
+        xml: "{$DATA.root}settings/admin/lmenu.xml"
+    });
 </script>
