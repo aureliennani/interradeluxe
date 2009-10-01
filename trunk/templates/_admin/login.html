@@ -24,7 +24,7 @@
                 
                 <tr>
                     <td align="center" colspan="2" style="color: #666;">
-                        <small>Do <u>NOT</u> Remember me for autologin <input type="checkbox" name="remember" value="1" {if !$smarty.cookies.remember or $smarty.cookies.remember == 'true'}checked{/if} /></small>
+                        <small>Do <u>NOT</u> Remember me for autologin <input type="checkbox" name="remember" value="1" {if $smarty.cookies.remember == 'true'}checked{/if} /></small>
                     </td>
                 </tr>
             </table>

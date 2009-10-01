@@ -3,14 +3,16 @@
 }
 
 #loginmask{
-    width: 400px;
+    width: 380px;
     margin: 200px auto;
+    font-size: 12px;    
 }
 
 #loginmask fieldset{
     border-bottom: 1px solid #aaa;
     border-left: 1px solid #aaa;
     border-right: 1px solid #ccc;
+    padding-right: 20px;
 }
 
 #essential{
