@@ -22,10 +22,15 @@
         protected $user;
         
         public function __construct($db,$smarty,$user){
-        
+            $this->db     = $db;
+            $this->smarty = $smarty;
+            $this->user   = $user;
         }
         
         public abstract function process();        
         
+        public function display(){
+            $this->process();
+        }   
     }
 ?>

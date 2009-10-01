@@ -15,10 +15,10 @@
     /***
         @purpose    
      ***/
-    class controllerRoot extends controller{
+    class controller404 extends controller{
         
         public function process(){
-            echo 'root controller';
+        
         }
         
     }
