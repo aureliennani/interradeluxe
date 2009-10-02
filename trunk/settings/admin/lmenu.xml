@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tree id="0">
+	<item text="All Items" id="allitems" open="1" call="1">
+	    <item text="owned by Me" id="obm" select="1"></item>
+	    <item text="recently Opened" id="rop"></item>
+	    <item text="starred Items" id="starred"></item>
+	    <item text="unpublished Items" id="drafts"></item>
+	</item>
+	
+	<item text="Categorized" id="magazines">
+		<item text="Sport" id="mag_sp"></item>
+	</item>
+	
+	<item text="Keywords" id="keywords">
+		<item text="PHP" id="keyword_1"></item>
+	</item>
+	
+	<item text="Archive" id="archive">
+		<item text="2009" id="arch_2009">
+		    <item text="October" id="arch_2009_10" />
+		</item>
+	</item>
+</tree> 
