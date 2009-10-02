@@ -10,31 +10,7 @@
 
 
 <div id="lmenu"></div>
-<div id="mainlist">
-    <table width="100%">
-        <thead>
-            <tr>
-                <td width="30">&nbsp;</td>
-                <td>Name</td>
-                <td width="250">Keywords</td>
-                <td width="150">Date</td>
-                <td width="150">DateAuthor</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td colspan="5">RECENT STUFF</td>
-            </tr>
-            <tr>
-                <td>P</td>
-                <td><a href="#">Hacking your iPhone</a></td>
-                <td><a href="#">iPhone</a>, <a href="#">Apple</a>, <a href="#">PHP</a></td>
-                <td>Aug 4, '09</td>
-                <td>Alexey Kulikov</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<div id="mygrid" style="width:100%;height:100%;"></div>
 
 <script>     
     var dhxLayout = new dhtmlXLayoutObject("parentId", "2U");
@@ -43,7 +19,7 @@
     dhxLayout.cells("a").attachObject("lmenu");
     dhxLayout.cells("b").hideHeader();
     //dhxLayout.cells("b").progressOn();
-    dhxLayout.cells("b").attachObject("mainlist");
+    dhxLayout.cells("b").attachObject("mygrid");
 </script>
 
 
@@ -54,4 +30,16 @@
         image_path: "{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/imgs/csh_bluebooks/",
         xml: "{$DATA.root}settings/admin/lmenu.xml"
     });
+</script>
+
+<script>
+    mygrid = new dhtmlXGridObject('mygrid');
+    mygrid.setImagePath("{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/imgs/");
+    mygrid.setHeader("Published,Title,Tags,Date,Author");
+    mygrid.setInitWidths("75,*,200,75,150");
+    mygrid.setColTypes("ro,ed,ro,ro,ro");
+    mygrid.setColAlign("center,left,left,center,right");
+    mygrid.setSkin("light");
+    mygrid.loadXML("{$DATA.root}settings/admin/items.xml");
+    mygrid.init();
 </script>
