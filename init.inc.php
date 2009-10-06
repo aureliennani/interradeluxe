@@ -12,6 +12,8 @@
     
      *******************************************************/
 
+    error_reporting(E_ALL);
+
     ## Autoloader ##
     #
     /**
@@ -55,7 +57,7 @@
     //a global array called $_CONFIG
     try{
         //make sure there is no notification
-        if(!$GLOBALS['_CONFIG']['root']){
+        if(!isset($GLOBALS['_CONFIG']['root'])){
             $GLOBALS['_CONFIG']['root'] = null;
         }        
         
