@@ -17,14 +17,16 @@
     #### Prepare #######
     #
     //security audit
-    $_GET['controller'] = str_replace('/','',$_GET['controller']);
-    $_GET['controller'] = str_replace('.','',$_GET['controller']);
-    $_GET['controller'] = str_replace('\\','',$_GET['controller']);
-    $_GET['controller'] = str_replace(' ','',$_GET['controller']);
+    if(isset($_GET['controller'])){
+        $_GET['controller'] = str_replace('/','',$_GET['controller']);
+        $_GET['controller'] = str_replace('.','',$_GET['controller']);
+        $_GET['controller'] = str_replace('\\','',$_GET['controller']);
+        $_GET['controller'] = str_replace(' ','',$_GET['controller']);
+    }
     
     //check for empty case
-    if(!$_GET['controller']){
-        if(!$_GET['admin']){
+    if(empty($_GET['controller'])){
+        if(!isset($_GET['admin'])){
             $_GET['controller'] = 'root';
         }else{
             $_GET['controller'] = 'adminRoot';
@@ -38,7 +40,11 @@
         $cacheID = '404';
     }else{        
         //cache id
-        $cacheID = str_replace('/','|',substr(substr($_SERVER['REDIRECT_URL'],0,-1),1));
+        if(isset($_SERVER['REDIRECT_URL'])){
+            $cacheID = str_replace('/','|',substr(substr($_SERVER['REDIRECT_URL'],0,-1),1));
+        }else{
+            $cacheID = '___root___';
+        }
     }
     #
     #### /Prepare ######

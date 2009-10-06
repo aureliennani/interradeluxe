@@ -37,7 +37,7 @@
             // if the call is placed from the client, then load the
             // client template set, otherwise load the admin templates
             $this->template_dir     = array();            
-            if($_GET['admin']){
+            if(isset($_GET['admin'])){
                 $this->template_dir[]   = $GLOBALS['_CONFIG']['root'].'templates/_admin';
                 $this->compile_dir      = $GLOBALS['_CONFIG']['root'].'cache/templates_c/_admin';
             }else{

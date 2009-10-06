@@ -18,7 +18,7 @@
     class controllerAdminRoot extends controller{
         
         public function process(){
-            if(!$_SESSION['admin']){
+            if(!isset($_SESSION['admin']) or $_SESSION['admin'] == false){
                 $this->processLogin();
             }else{
                 $this->template('main.html');
