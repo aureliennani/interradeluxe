@@ -38,6 +38,7 @@
 fieldset{
     border: none;
     border-top: 1px solid #ccc;
+    padding: 15px 0 15px 5px;
 }
 
 legend{
