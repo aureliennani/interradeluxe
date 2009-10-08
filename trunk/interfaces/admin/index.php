@@ -14,6 +14,7 @@
     
     //prepare
     $GLOBALS['_CONFIG']['root'] = substr(dirname(__FILE__),0,-16);
+    $_GET['admin'] = true;
     
     //config
     require_once $GLOBALS['_CONFIG']['root'].'classes/ajax.class.php';
@@ -35,6 +36,6 @@
     }
     
     //send reply to the requesting party
-    $ajax = new $ajaxAaction($db,$R);
+    $ajax = new $ajaxAaction($db, $R, $smarty);
     $ajax->reply();
 ?>

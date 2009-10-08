@@ -19,7 +19,7 @@ AddDefaultCharset utf-8
 	php_flag    mbstring.encoding_translation   on
 	php_value   output_buffering 0
 	php_value   allow_call_time_pass_reference off      
-        php_value   mbstring.http_input     "UTF-8"
+    php_value   mbstring.http_input     "UTF-8"
 	php_value   mbstring.http_output    "UTF-8"
 	php_value   mbstring.detect_order   "UTF-8"
 </IfModule>
