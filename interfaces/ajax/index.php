@@ -31,6 +31,6 @@
     }
     
     //send reply to the requesting party
-    $ajax = new $ajaxAaction($db,$R);
+    $ajax = new $ajaxAaction($db,$R,$smarty);
     $ajax->reply();
 ?>
