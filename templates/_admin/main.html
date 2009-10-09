@@ -3,7 +3,7 @@
 <script>
     var toolbar = new dhtmlXToolbarObject("toolbarObj"); 
     toolbar.setIconsPath("{$DATA.root}lib/dhtmlx/dhtmlxToolbar/samples/common/imgs/");
-    toolbar.loadXML("{$DATA.root}settings/admin/toolbar.xml");
+    toolbar.loadXML("{$DATA.root}interfaces/admin/?action=toolbar&clean=true");
 </script>
 
 <div id="parentId" style="position:absolute; width:100%; height:100%;"></div>
@@ -29,7 +29,7 @@
         skin: "dhx_skyblue",
         parent: "lmenu",
         image_path: "{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/imgs/csh_bluebooks/",
-        xml: "{$DATA.root}settings/admin/lmenu.xml"
+        xml: "{$DATA.root}interfaces/admin/?action=tree&clean=true"
     });
 </script>
 

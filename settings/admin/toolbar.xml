@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<toolbar>
-    <item id="new" type="button" img="new.gif" text="Add New Entry" imgdis="new_dis.gif"/>
-    
-    <item id="sep1" type="separator"/>
-    <item id="info" type="text" text="Search for:"/>
-    <item id="filter_text" type="buttonInput" value="" width="160" title="Search text here.." />
-</toolbar>
