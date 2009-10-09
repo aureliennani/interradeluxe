@@ -58,6 +58,7 @@ RewriteRule ^(.*/)?\.svn/ index.php?controller=404 [NC,L]
 
 ## ADMIN SIDE ##
 RewriteRule ^admin/?$ index.php?admin=true&%{QUERY_STRING} [NC,L]
+RewriteRule ^admin/upload/?$ index.php?admin=true&controller=adminUpload&%{QUERY_STRING} [NC,L]
 
 
 ## CLIENT SIDE ##

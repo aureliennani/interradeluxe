@@ -4,14 +4,46 @@
     var toolbar = new dhtmlXToolbarObject("toolbarObj"); 
     toolbar.setIconsPath("{$DATA.root}lib/dhtmlx/dhtmlxToolbar/samples/common/imgs/");
     toolbar.loadXML("{$DATA.root}interfaces/admin/?action=toolbar&clean=true");
+    
+    toolbar.attachEvent("onClick", function(id){   
+        switch(id){
+            case 'new': {                            
+                            loadEntryAddForm();
+                        }
+        }
+    });
+    
+    
+    
+    
+    function loadEntryAddForm(){
+        dhxLayout.cells("b").progressOn();
+        (new AjaxRequest).send({
+            url     : "/interfaces/admin/index.php",
+            data    : {
+                action: 'addForm'
+            },
+            
+            onSuccess  : function(data, info)
+            {      
+                $('mygrid').innerHTML = data.form;
+
+                CKEDITOR.replace('editor1',{
+                                            filebrowserUploadUrl : '/admin/upload/',
+                                           });
+
+                dhxLayout.cells("b").progressOff();
+            }
+          });
+    }
 </script>
+
 
 <div id="parentId" style="position:absolute; width:100%; height:100%;"></div>
 
-
 <div id="lmenu"></div>
-
 <div id="mygrid" style="width:100%;height:100%;"></div>
+
 
 <script>     
     var dhxLayout = new dhtmlXLayoutObject("parentId", "2U");

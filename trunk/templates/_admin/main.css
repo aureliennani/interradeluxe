@@ -49,3 +49,12 @@ html, body{
     overflow: auto; 
     
 }
+
+#addForm{
+    padding: 5px 10px;
+}
+
+#addForm label{
+    display: block;
+    font-weight: bold;
+}

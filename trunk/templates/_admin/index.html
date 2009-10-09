@@ -8,16 +8,23 @@
     {if $template=="login.html"}    
         <link rel="stylesheet" type="text/css" media="screen,projection" href="{$DATA.admin}login.css" />  
     {else}
+        <!-- ajax -->
+        <script type="text/javascript" src="{$DATA.root}lib/ajax/ajaxRequest.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/prototype/prototype.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/ckeditor/_samples/sample.js"></script>
+        <!-- /ajax -->
+        
         <!-- toolbar -->
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/dhtmlxcommon.js"></script>
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/dhtmlxtoolbar.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/dhtmlxcommon.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/dhtmlxtoolbar.js"></script>
         <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxToolbar/codebase/skins/dhtmlxtoolbar_dhx_skyblue.css" />
         <!-- /toolbar -->
         
         <!-- layout -->
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxcommon.js"></script>
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxcontainer.js"></script>
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxlayout.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxcommon.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxcontainer.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/dhtmlxlayout.js"></script>
         
         <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/skins/dhtmlxlayout.css" />
         <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxLayout/codebase/skins/dhtmlxlayout_dhx_skyblue.css" />
@@ -25,15 +32,15 @@
         
         <!-- trees -->
         <link rel="stylesheet" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxtree.css" />
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxcommon.js"></script>
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxtree.js"></script>   
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxcommon.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxTree/codebase/dhtmlxtree.js"></script>   
         <!-- /trees -->
         
         <!-- grids -->
         <link rel="STYLESHEET" type="text/css" href="{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/dhtmlxgrid.css">
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/dhtmlxcommon.js"></script>
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/dhtmlxgrid.js"></script>
-        <script src="{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/dhtmlxgridcell.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/dhtmlxcommon.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/dhtmlxgrid.js"></script>
+        <script type="text/javascript" src="{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/dhtmlxgridcell.js"></script>
         <!-- /grids -->
     {/if}
 </head>
