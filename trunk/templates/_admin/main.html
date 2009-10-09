@@ -16,12 +16,13 @@
     
     
     
-    function loadEntryAddForm(){
+    function loadEntryAddForm(entry){
         dhxLayout.cells("b").progressOn();
         (new AjaxRequest).send({
             url     : "/interfaces/admin/index.php",
             data    : {
-                action: 'addForm'
+                action: 'addForm',
+                aid: entry
             },
             
             onSuccess  : function(data, info)
@@ -37,6 +38,7 @@
             }
           });
     }
+
 </script>
 
 

@@ -3,7 +3,7 @@
     {foreach from=$entries item=entry}
     <row id="{$entry.aid}">
         <cell><![CDATA[<a href="#"><img src="{$DATA.admin}img/state_{if !$entry.published}un{/if}published.gif" width="10" height="10" border="0" /></a>]]></cell>
-        <cell><![CDATA[<a href="#">{$entry.title}</a>]]></cell>
+        <cell><![CDATA[<a href="javascript:loadEntryAddForm({$entry.aid});">{$entry.title}</a>]]></cell>
         <cell>{$entry.tags|default:'--'}</cell>
         <cell>{$entry.created|date_format}</cell>
         <cell><![CDATA[{$entry.last_name} {$entry.first_name}]]></cell>
