@@ -18,7 +18,19 @@
     class controllerAdminAdd extends controller{
         
         public function process(){
-            $this->template('add.html');            
+            //process adding new entry
+            $this->db->query("INSERT INTO articles SET
+                                            title       = ".$this->db->quote($_POST['title']).",
+                                            content     = ".$this->db->quote($_POST['content']).",
+                                            url         = ".$this->db->quote('booga_dooga_'.rand(1,10000000)).",
+                                            created     = NOW(),
+                                            modified    = NOW(),
+                                            author      = 1");
+            
+            
+            //redirect
+            header('Location: /admin/');
+            exit;
         }
     }
 ?>
