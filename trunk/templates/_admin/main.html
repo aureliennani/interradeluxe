@@ -38,9 +38,10 @@
     mygrid.setImagePath("{$DATA.root}lib/dhtmlx/dhtmlxGrid/codebase/imgs/");
     mygrid.setHeader("Published,Title,Tags,Date,Author");
     mygrid.setInitWidths("75,*,200,75,150");
-    mygrid.setColTypes("ro,ed,ro,ro,ro");
-    mygrid.setColAlign("center,left,left,center,right");
+    mygrid.setColTypes("ro,ro,ro,ro,ro");
+    mygrid.setColAlign("center,left,left,center,center");
     mygrid.setSkin("light");
+    //mygrid.enableColSpan();
     mygrid.loadXML("{$DATA.root}interfaces/admin/?action=entries&clean=true");
     mygrid.init();
 </script>
