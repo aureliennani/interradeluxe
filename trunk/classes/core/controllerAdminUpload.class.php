@@ -16,9 +16,11 @@
         
         public function process(){
             
-            echo "<script type=\"text/javascript\">var CKEditorFuncNum = window.location.href.replace(/.*CKEditorFuncNum=(\d+).*/,\"$1\")||alert('Error: lost CKEditorFuncNum param from url'+window.location.href)||1;
-window.opener.CKEDITOR.tools.callFunction(CKEditorFuncNum, 'http://essentialmind.com/templates/main/images/tellmore.png');</script>";
+            //print_r($_GET);
+            $output = '<html><body><script type="text/javascript">window.parent.CKEDITOR.tools.callFunction(1, "http://googleads.g.doubleclick.net/pagead/imgad?id=CM7c4-ndnsW11AEQoAEYwgQyCDd-5qDON_kX");</script></body></html>';
+            echo $output;
             exit;
+
         }
     }
 ?>
