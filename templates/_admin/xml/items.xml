@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rows>
     {foreach from=$entries item=entry}
-    <row id="a">
+    <row id="{$entry.aid}">
         <cell><![CDATA[<a href="#"><img src="{$DATA.admin}img/state_{if !$entry.published}un{/if}published.gif" width="10" height="10" border="0" /></a>]]></cell>
         <cell><![CDATA[<a href="#">{$entry.title}</a>]]></cell>
         <cell>{$entry.tags|default:'--'}</cell>
