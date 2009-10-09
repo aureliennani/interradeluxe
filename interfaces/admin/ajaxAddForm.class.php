@@ -14,6 +14,15 @@
     class ajaxAddForm extends ajax{
 
         public function process(){              
+        
+            if($_REQUEST['aid']){
+                //cast entry object
+                $entry = new entry($this->db,$_REQUEST['aid']);                
+            }else{
+                $entry = new stdClass();
+            }
+            
+            $this->smarty->assign('entry',$entry);
             $this->R->form = $this->smarty->fetch('add.html');
         }
     }
