@@ -26,6 +26,7 @@
         
         public function __construct($db){
             $this->db = $db;
+            $this->init();
         }
         
         
@@ -34,6 +35,12 @@
             @return     (bool) was the init successful
          ***/
         public function init(){
+            $this->entries = $this->db->query("SELECT 
+                                                        articles.*,
+                                                        credentials.first_name,
+                                                        credentials.last_name
+                                                    FROM articles
+                                                    LEFT JOIN credentials ON articles.author = credentials.uid")->fetchAll();
             return true;
         }
         

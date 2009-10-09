@@ -52,9 +52,11 @@ CREATE TABLE articles(
     author          INT UNSIGNED NOT NULL,
     
     cache_keywords  TEXT,
+    cache_author    VARCHAR(255),
     cache_comments  INT UNSIGNED DEFAULT 0,
     cache_files     INT UNSIGNED DEFAULT 0,
     cache_images    INT UNSIGNED DEFAULT 0,
+    
     
     PRIMARY KEY(aid),
     KEY(published),
@@ -64,3 +66,12 @@ CREATE TABLE articles(
     KEY(author)
     
 ) DEFAULT CHARSET=utf8;
+
+INSERT INTO articles SET
+    title = 'Wonderful Tonight',
+    content = 'This is some excellent content',
+    url = 'wonderful_tonight',
+    created = NOW(),
+    modified = NOW(),
+    author = 1;
+        
