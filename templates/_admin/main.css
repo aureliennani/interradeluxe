@@ -55,17 +55,18 @@ html, body{
 }
 
 #addForm #articleTitle{
-    width: 80%;
+    width: 300px;
     padding: 2px 2px 5px;
     font-size: 16px;
     border: none;
-    background: #fff;
-    
+    background: #fff;    
 }
 
-#addForm #saveButton{
+#addForm #draftSavedAt{
     float: right;
-    margin-top: 2px;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: #666;
 }
 
 #addForm label{

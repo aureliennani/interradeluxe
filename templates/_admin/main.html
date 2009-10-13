@@ -31,7 +31,22 @@
 
                 CKEDITOR.replace('editor1',{
                                             filebrowserUploadUrl : '/admin/upload/',
-                                            height: '600px'
+                                            height: '600px',
+                                            toolbar :
+                                                    [
+                                                        ['Source','-','Save','Maximize'],
+                                                        ['Cut','Copy','Paste','PasteText','PasteFromWord'],
+                                                        ['Undo','Redo','-','SelectAll','RemoveFormat'],
+                                                        ['Format','Font','FontSize'],                                                        
+                                                        '/',
+                                                        ['TextColor','BGColor'],
+                                                        ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+                                                        ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+                                                        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+                                                        ['Link','Unlink','Anchor'],
+                                                        ['Image','Flash','Table','HorizontalRule','PageBreak'],
+                                                    ]
+
                                            });
 
                 dhxLayout.cells("b").progressOff();
